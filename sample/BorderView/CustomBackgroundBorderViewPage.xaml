@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:borderView="clr-namespace:BorderView;assembly=BorderView"
+             x:Class="BorderView.Sample.CustomBackgroundBorderViewPage"
+             BindingContext="{Binding Source={RelativeSource Self}}">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="Template">
+            <borderView:CustomBackgroundBorderView BorderThickness="50" CornerRadius="10" Margin="20" HasShadow="False">
+
+                <!-- Custom Border Content -->
+                <borderView:CustomBackgroundBorderView.BorderView>
+                    <Image HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Aspect="AspectFill"
+                           Source="{Binding BackgroundImageUrl}" />
+                </borderView:CustomBackgroundBorderView.BorderView>
+
+                <!-- Main Content -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           Aspect="AspectFill"
+                           Source="{Binding MainImageUrl}" />
+                    <StackLayout Grid.Row="1">
+                        <Label
+                            Text="{Binding Name}"
+                            HorizontalOptions="Center"
+                            FontSize="Large"
+                            FontAttributes="Bold"
+                            Margin="5" />
+                        <Label Text="{Binding Age}" TextColor="DimGray" FontSize="Medium" Margin="10,0" />
+                        <Label Text="{Binding Favorite}" TextColor="DimGray" FontSize="Medium" Margin="10,0" />
+                        <Label Text="{Binding Hobby}" TextColor="DimGray" FontSize="Medium" Margin="10,0" />
+                    </StackLayout>
+                </Grid>
+            </borderView:CustomBackgroundBorderView>
+        </DataTemplate>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label Text="Use any View as a border"
+               HorizontalOptions="Center"
+               FontSize="Title"
+               Margin="10" />
+        <CarouselView Margin="10,10,10,20"  
+                      ItemsSource="{Binding Datas}" 
+                      ItemTemplate="{StaticResource Template}" />
+    </StackLayout>
+</ContentPage>

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using BorderView.Sample.Advanced;
 using Xamarin.Forms;
 
 namespace BorderView.Sample
@@ -11,6 +13,21 @@ namespace BorderView.Sample
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Simple_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SimpleBorderViewPage(), true);
+        }
+
+        private void Custom_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CustomBackgroundBorderViewPage(), true);
+        }
+        
+        private void Advanced_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AdvancedCustomBackgroundBorderViewPage(), true);
         }
     }
 }

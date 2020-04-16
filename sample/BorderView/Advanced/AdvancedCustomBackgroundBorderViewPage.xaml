@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:advanced="clr-namespace:BorderView.Sample.Advanced;assembly=BorderView.Sample"
+             xmlns:borderView="clr-namespace:BorderView;assembly=BorderView"
+             x:Class="BorderView.Sample.Advanced.AdvancedCustomBackgroundBorderViewPage"
+             BackgroundColor="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <borderView:CustomBackgroundBorderView Grid.Row="0"
+                                               x:Name="BorderView"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"
+                                               CornerRadius="0"
+                                               BorderThickness="0">
+
+            <borderView:CustomBackgroundBorderView.BorderView>
+                <advanced:NightSkyView x:Name="NightSky" />
+            </borderView:CustomBackgroundBorderView.BorderView>
+
+            <Image Aspect="AspectFill"
+                   Margin="-6"
+                   HeightRequest="200"
+                   Source="http://pngimg.com/uploads/earth/earth_PNG39.png" />
+
+        </borderView:CustomBackgroundBorderView>
+
+        <StackLayout Grid.Row="1" Margin="15,5,15,10" VerticalOptions="End">
+            <StackLayout.Resources>
+                <Style TargetType="View">
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="VerticalTextAlignment" Value="Center" />
+                </Style>
+            </StackLayout.Resources>
+
+            <Label Text="Corner Radius: 0" x:Name="RadiusLbl" />
+            <Slider Maximum="150" Minimum="0" Value="0" ValueChanged="Radius_OnValueChanged" HorizontalOptions="FillAndExpand" />
+
+
+            <Label Text="Border Thickness: 0" x:Name="ThicknessLbl" />
+            <Slider Maximum="60" Minimum="0" Value="0" ValueChanged="Thickness_OnValueChanged" />
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Stars" />
+                <Switch Toggled="IsShowingStarts_OnToggled" VerticalOptions="Center" />
+                <Button Text="Fewer" Clicked="FewerStar_OnClicked" VerticalOptions="Center" />
+                <Button Text="More" Clicked="MoreStar_OnClicked" VerticalOptions="Center" />
+            </StackLayout>
+
+
+            <Label Text="Orbit Speed: 0" x:Name="OrbitSpeedLbl" />
+            <Slider Maximum="0.05" Minimum="0" Value="0" ValueChanged="OrbitSpeed_OnValueChanged" />
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Spin" Margin="10,0,5,0" />
+                <Switch Toggled="IsSpinning_OnToggled" />
+
+                <Label Text="Pulse" Margin="10,0,5,0" />
+                <Switch Toggled="IsPulsing_OnToggled" />
+            </StackLayout>
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

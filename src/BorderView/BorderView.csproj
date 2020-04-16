@@ -9,4 +9,15 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="SimpleBorderView.xaml.cs">
+      <DependentUpon>SimpleBorderView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomBackgroundBorderView.xaml.cs">
+      <DependentUpon>CustomBackgroundBorderView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

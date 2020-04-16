@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:borderView="clr-namespace:BorderView;assembly=BorderView"
+             x:Class="BorderView.Sample.SimpleBorderViewPage">
+    <StackLayout Spacing="0">
+        <Label Text="Choose the color and corner radius of your border. Shadows work too!"
+               HorizontalOptions="Center"
+               FontSize="Title"
+               Margin="10,5"
+               HorizontalTextAlignment="Center" />
+        <borderView:SimpleBorderView BorderThickness="3"
+                                     CornerRadius="9"
+                                     Margin="5"
+                                     BorderColor="ForestGreen"
+                                     HasShadow="False"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center">
+            <StackLayout Padding="15"
+                         Orientation="Vertical">
+                
+                <borderView:SimpleBorderView BorderThickness="6"
+                                             CornerRadius="9"
+                                             BorderColor="Orchid"
+                                             HasShadow="True"
+                                             VerticalOptions="Center"
+                                             HorizontalOptions="Center">
+                    <Image Source="https://cdn.pixabay.com/photo/2018/10/26/20/47/barbary-ape-3775368_1280.jpg"
+                           Aspect="AspectFill" />
+                </borderView:SimpleBorderView>
+                <borderView:SimpleBorderView BorderThickness="6"
+                                             CornerRadius="0"
+                                             BorderColor="MediumSpringGreen"
+                                             HasShadow="False"
+                                             VerticalOptions="Center"
+                                             HorizontalOptions="Center">
+                    <Label Margin="3" HorizontalTextAlignment="Center" Text="https://cdn.pixabay.com/photo/2018/10/26/20/47/barbary-ape-3775368_1280.jpg" />
+                </borderView:SimpleBorderView>
+
+                <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                    <StackLayout VerticalOptions="Center" Spacing="2">
+                        <borderView:SimpleBorderView BorderThickness="12"
+                                                     CornerRadius="45"
+                                                     BorderColor="DodgerBlue"
+                                                     HasShadow="False"
+                                                     VerticalOptions="Center"
+                                                     HorizontalOptions="Center"
+                                                     Margin="0">
+                            <Image Source="https://cdn.pixabay.com/photo/2018/07/25/21/59/barbary-ape-3562358_1280.jpg"
+                                   HeightRequest="90"
+                                   WidthRequest="90"
+                                   Aspect="AspectFill" />
+                        </borderView:SimpleBorderView>
+                        <borderView:SimpleBorderView BorderThickness="2"
+                                                     CornerRadius="9"
+                                                     BorderColor="Goldenrod"
+                                                     HasShadow="False"
+                                                     VerticalOptions="Center"
+                                                     HorizontalOptions="Center"
+                                                     Margin="0">
+                            <Label Margin="3"
+                                   FontSize="Micro"
+                                   HorizontalTextAlignment="Center" Text="https://cdn.pixabay.com/photo/2018/07/25/21/59/barbary-ape-3562358_1280.jpg" />
+                        </borderView:SimpleBorderView>
+
+                    </StackLayout>
+                    <StackLayout VerticalOptions="Center" Spacing="2">
+                        <borderView:SimpleBorderView BorderThickness="12"
+                                                     CornerRadius="45"
+                                                     BorderColor="DeepSkyBlue"
+                                                     HasShadow="False"
+                                                     VerticalOptions="Center"
+                                                     HorizontalOptions="Center"
+                                                     Margin="0" Padding="0">
+                            <Image Source="https://cdn.pixabay.com/photo/2019/03/05/12/26/monkey-4036088_1280.jpg"
+                                   HeightRequest="90"
+                                   WidthRequest="90"
+                                   Aspect="AspectFill" />
+                        </borderView:SimpleBorderView>
+                        <borderView:SimpleBorderView BorderThickness="2"
+                                                     CornerRadius="9"
+                                                     BorderColor="Goldenrod"
+                                                     HasShadow="False"
+                                                     VerticalOptions="Center"
+                                                     HorizontalOptions="Center"
+                                                     Margin="0">
+                            <Label Margin="3"
+                                   FontSize="Micro"
+                                   HorizontalTextAlignment="Center" Text="https://cdn.pixabay.com/photo/2019/03/05/12/26/monkey-4036088_1280.jpg" />
+                        </borderView:SimpleBorderView>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+        </borderView:SimpleBorderView>
+    </StackLayout>
+</ContentPage>

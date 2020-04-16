@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using BorderView.Sample;
+﻿using BorderView.Sample;
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace BorderView.iOS
 {
@@ -22,7 +20,9 @@ namespace BorderView.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.Init();
+            Forms.SetFlags("CarouselView_Experimental");
+
+            Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

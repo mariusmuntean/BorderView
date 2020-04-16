@@ -12,11 +12,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.1.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\BorderView\BorderView.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="SimpleBorderViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CustomBackgroundBorderViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Advanced\AdvancedCustomBackgroundBorderViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="SimpleBorderViewPage.xaml.cs">
+      <DependentUpon>SimpleBorderViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="CustomBackgroundBorderViewPage.xaml.cs">
+      <DependentUpon>CustomBackgroundBorderViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Advanced\AdvancedCustomBackgroundBorderViewPage.xaml.cs">
+      <DependentUpon>AdvancedCustomBackgroundBorderViewPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
