@@ -4,6 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <LangVersion>8</LangVersion>
+    <Title>BorderView</Title>
+    <Description>A border view for Xamarin.Forms</Description>
+    <PackageProjectUrl>https://github.com/mariusmuntean/BorderView</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mariusmuntean/BorderView</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Xamarin.Forms border customview</PackageTags>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
